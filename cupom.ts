@@ -14,9 +14,38 @@ let dados = {
 };
 
 function imprime_dados_loja() {
-  // Implemente aqui
-  return "";
+  if(dados.nome_loja == ""){
+    return "O campo nome da loja é obrigatório"
+  }
+  if(dados.logradouro == ""){
+    return "O campo logradouro do endereço é obrigatório"
+  }
+  if(dados.municipio == ""){
+    return "O campo município do endereço é obrigatório"
+  }
+  if(dados.estado == ""){
+    return "O campo estado do endereço é obrigatório"
+  }
+  if(dados.cnpj == ""){
+    return "O campo CNPJ da loja é obrigatório"
+  }
+  if(dados.inscricao_estadual == ""){
+    return "O campo inscrição estadual da loja é obrigatório"
+  }
+
+
+  let show = `${dados.nome_loja}
+${dados.logradouro}, ${(dados.numero == 0)? "s/n" : dados.numero} ${dados.complemento}
+${dados.bairro} - ${dados.municipio} - ${dados.estado}
+CEP:${dados.cep} Tel ${dados.telefone}
+${dados.observacao}
+CNPJ: ${dados.cnpj}
+IE: ${dados.inscricao_estadual}
+`;
+  return show
+      
 }
+
 
 module.exports = {
   dados: dados,
